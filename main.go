@@ -4,12 +4,17 @@ import (
 	"fmt"
 
 	"github.com/wolfinger/algos/search"
+	"github.com/wolfinger/algos/sort"
 )
 
 func main() {
-	// test binary search
-	arr := []int{1, 3, 6, 7, 8, 12, 18, 24, 52, 103}
+	// test bubble sort
+	arr := []int{24, 3, 7, 6, 8, 103, 18, 1, 52, 12}
 
+	arr = sort.Bubble(arr)
+	fmt.Println(arr)
+
+	// test binary search
 	idx, found := search.Binary(arr, 6)
 	fmt.Println(idx, found)
 
