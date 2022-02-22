@@ -14,7 +14,10 @@ func main() {
 	// arr = sort.Bubble(arr)
 
 	// test selection sort
-	arr = sort.Selection(arr)
+	// arr = sort.Selection(arr)
+
+	// test insertion sort
+	arr = sort.Insertion(arr)
 
 	fmt.Println(arr)
 
