@@ -8,10 +8,14 @@ import (
 )
 
 func main() {
-	// test bubble sort
 	arr := []int{24, 3, 7, 6, 8, 103, 18, 1, 52, 12}
 
-	arr = sort.Bubble(arr)
+	// test bubble sort
+	// arr = sort.Bubble(arr)
+
+	// test selection sort
+	arr = sort.Selection(arr)
+
 	fmt.Println(arr)
 
 	// test binary search
