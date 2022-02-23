@@ -5,6 +5,7 @@ import (
 
 	"github.com/wolfinger/algos/search"
 	"github.com/wolfinger/algos/sort"
+	stack "github.com/wolfinger/algos/structs"
 )
 
 func main() {
@@ -33,4 +34,17 @@ func main() {
 
 	idx, found = search.Binary(arr, 2)
 	fmt.Println(idx, found)
+
+	// test a stack
+	var s stack.Stack
+
+	fmt.Println(s.Read())
+
+	for i := 0; i < len(arr); i++ {
+		s.Push(arr[i])
+	}
+
+	fmt.Println(s.Read())
+	fmt.Println(s.Pop())
+	fmt.Println(s.Read())
 }
