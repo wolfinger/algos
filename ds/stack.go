@@ -1,4 +1,4 @@
-package stack
+package ds
 
 type Stack struct {
 	stack []int

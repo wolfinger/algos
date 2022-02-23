@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 
+	"github.com/wolfinger/algos/ds"
 	"github.com/wolfinger/algos/search"
 	"github.com/wolfinger/algos/sort"
-	stack "github.com/wolfinger/algos/structs"
 )
 
 func main() {
@@ -36,7 +36,7 @@ func main() {
 	fmt.Println(idx, found)
 
 	// test a stack
-	var s stack.Stack
+	var s ds.Stack
 
 	fmt.Println(s.Read())
 
