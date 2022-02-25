@@ -55,7 +55,7 @@ func main() {
 
 	fmt.Println(q.Read())
 
-	for i := len(arr) - 1; i >= 0; i-- {
+	for i := 0; i < len(arr); i++ {
 		q.Enqueue(arr[i])
 	}
 
