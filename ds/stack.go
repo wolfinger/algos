@@ -9,12 +9,16 @@ func (s *Stack) Push(item int) {
 	s.stack = append(s.stack, item)
 }
 
-func (s *Stack) Pop() int {
+func (s *Stack) Pop() (int, bool) {
 	// remove from stack
-	item := s.stack[len(s.stack)-1]
-	s.stack = append(s.stack[:len(s.stack)-1])
+	if len(s.stack) > 0 {
+		item := s.stack[len(s.stack)-1]
+		s.stack = append(s.stack[:len(s.stack)-1])
 
-	return item
+		return item, false
+	} else {
+		return 0, true
+	}
 }
 
 func (s *Stack) Read() (int, bool) {

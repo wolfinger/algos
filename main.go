@@ -36,6 +36,7 @@ func main() {
 	fmt.Println(idx, found)
 
 	// test a stack
+	fmt.Println("testing stack:")
 	var s ds.Stack
 
 	fmt.Println(s.Read())
@@ -47,4 +48,18 @@ func main() {
 	fmt.Println(s.Read())
 	fmt.Println(s.Pop())
 	fmt.Println(s.Read())
+
+	// test a queue
+	fmt.Println("testing queue:")
+	var q ds.Queue
+
+	fmt.Println(q.Read())
+
+	for i := len(arr) - 1; i >= 0; i-- {
+		q.Enqueue(arr[i])
+	}
+
+	fmt.Println(q.Read())
+	fmt.Println(q.Dequeue())
+	fmt.Println(q.Read())
 }
