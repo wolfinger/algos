@@ -20,6 +20,11 @@ func main() {
 	// test insertion sort
 	// arr = sort.Insertion(arr)
 
+	// test quickselect
+	fmt.Println(sort.Quickselect(arr, 2))
+	fmt.Println(sort.Quickselect(arr, 0))
+	fmt.Println(sort.Quickselect(arr, 4))
+
 	// test quicksort sort
 	arr = sort.Quicksort(arr)
 
