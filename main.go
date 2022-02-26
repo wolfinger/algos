@@ -18,7 +18,10 @@ func main() {
 	// arr = sort.Selection(arr)
 
 	// test insertion sort
-	arr = sort.Insertion(arr)
+	// arr = sort.Insertion(arr)
+
+	// test quicksort sort
+	arr = sort.Quicksort(arr)
 
 	fmt.Println(arr)
 
