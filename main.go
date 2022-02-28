@@ -70,4 +70,19 @@ func main() {
 	fmt.Println(q.Read())
 	fmt.Println(q.Dequeue())
 	fmt.Println(q.Read())
+
+	// test a linked list
+	n1 := ds.NewNode(arr[0])
+	n2 := ds.NewNode(arr[1])
+	n3 := ds.NewNode(arr[3])
+
+	n1.Next = n2
+	n2.Next = n3
+
+	ll := ds.NewLinkedList(n1)
+
+	// print nodes
+	for node := ll.Head; node != nil; node = node.Next {
+		fmt.Println(node.Data)
+	}
 }
