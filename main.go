@@ -76,13 +76,19 @@ func main() {
 	n2 := ds.NewNode(arr[1])
 	n3 := ds.NewNode(arr[3])
 
-	n1.Next = n2
-	n2.Next = n3
-
 	ll := ds.NewLinkedList(n1)
+	ll.AddToEnd(n2)
+	ll.AddToEnd(n3)
 
 	// print nodes
 	for node := ll.Head; node != nil; node = node.Next {
 		fmt.Println(node.Data)
 	}
+
+	ll.DeleteFromEnd()
+
+	// print nodes using read method
+	fmt.Println(ll.Read(0))
+	fmt.Println(ll.Read(1))
+	fmt.Println(ll.Read(2))
 }
