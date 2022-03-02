@@ -91,4 +91,38 @@ func main() {
 	fmt.Println(ll.Read(0))
 	fmt.Println(ll.Read(1))
 	fmt.Println(ll.Read(2))
+
+	// test a bst
+	bstnR1N1 := ds.NewBSTNode(12) //                  12
+	bstnR2N1 := ds.NewBSTNode(7)  //               7      24
+	bstnR2N2 := ds.NewBSTNode(24) //             3   8  18   52
+	bstnR3N1 := ds.NewBSTNode(3)  //           1  6           103
+	bstnR3N2 := ds.NewBSTNode(8)
+	bstnR3N3 := ds.NewBSTNode(18)
+	bstnR3N4 := ds.NewBSTNode(52)
+	bstnR4N1 := ds.NewBSTNode(1)
+	bstnR4N2 := ds.NewBSTNode(6)
+	bstnR4N3 := ds.NewBSTNode(103)
+
+	// first level
+	bstnR1N1.Left = bstnR2N1
+	bstnR1N1.Right = bstnR2N2
+
+	// second level
+	bstnR2N1.Left = bstnR3N1
+	bstnR2N1.Right = bstnR3N2
+	bstnR2N2.Left = bstnR3N3
+	bstnR2N2.Right = bstnR3N4
+
+	// third level
+	bstnR3N1.Left = bstnR4N1
+	bstnR3N1.Right = bstnR4N2
+	bstnR3N4.Right = bstnR4N3
+
+	// set root alias
+	root := bstnR1N1
+
+	fmt.Println(ds.BSTSearch(root, 18))
+	fmt.Println(ds.BSTSearch(root, 3))
+	fmt.Println(ds.BSTSearch(root, 21))
 }
