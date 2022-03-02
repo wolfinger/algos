@@ -23,3 +23,21 @@ func BSTSearch(node *BSTNode, value int) *BSTNode {
 		return BSTSearch(node.Right, value)
 	}
 }
+
+func BSTInsert(node *BSTNode, value int) *BSTNode {
+	if value < node.Data {
+		if node.Left == nil {
+			node.Left = NewBSTNode(value)
+			return node.Left
+		} else {
+			return BSTInsert(node.Left, value)
+		}
+	} else {
+		if node.Right == nil {
+			node.Right = NewBSTNode(value)
+			return node.Right
+		} else {
+			return BSTInsert(node.Right, value)
+		}
+	}
+}
