@@ -41,3 +41,34 @@ func BSTInsert(node *BSTNode, value int) *BSTNode {
 		}
 	}
 }
+
+func BSTDelete(node *BSTNode, value int) *BSTNode {
+	if node == nil {
+		return nil
+	} else if value < node.Data {
+		node.Left = BSTDelete(node.Left, value)
+		return node
+	} else if value > node.Data {
+		node.Right = BSTDelete(node.Right, value)
+		return node
+	} else {
+		if node.Left == nil {
+			return node.Right
+		} else if node.Right == nil {
+			return node.Left
+		} else {
+			node.Right = BSTLift(node.Right, node)
+			return node
+		}
+	}
+}
+
+func BSTLift(node *BSTNode, delNode *BSTNode) *BSTNode {
+	if node.Left != nil {
+		node.Left = BSTLift(node.Left, delNode)
+		return node
+	} else {
+		delNode.Data = node.Data
+		return node.Right
+	}
+}
