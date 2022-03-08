@@ -119,4 +119,18 @@ func main() {
 	fmt.Println(root.Data)
 	fmt.Println(root.Left.Data)
 	fmt.Println(root.Right.Left)
+
+	heap := ds.NewHeap(arr[0])
+	for _, val := range arr[1:] {
+		heap.Insert(val)
+	}
+
+	heap.Print()
+	fmt.Println("===")
+
+	heap.Delete()
+	heap.Delete()
+	heap.Delete()
+
+	heap.Print()
 }
