@@ -133,4 +133,21 @@ func main() {
 	heap.Delete()
 
 	heap.Print()
+
+	fmt.Println("===")
+
+	t := ds.NewTrie()
+	t.Insert("cat")
+	t.Insert("cab")
+	t.Insert("call")
+	t.Insert("caller")
+
+	fmt.Println(t.Root.Kids["c"].Kids["a"].Kids)
+
+	var words []string
+	t.CollectAllWords(nil, "", words)
+
+	for word := range words {
+		fmt.Println(word)
+	}
 }
