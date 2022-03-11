@@ -1,13 +1,12 @@
 package ds
 
-import "fmt"
-
 type TrieNode struct {
 	Kids map[string]*TrieNode
 }
 
 type Trie struct {
-	Root *TrieNode
+	Root  *TrieNode
+	Words []string
 }
 
 func NewTrieNode() *TrieNode {
@@ -57,7 +56,7 @@ func (t *Trie) Insert(word string) *TrieNode {
 	return currKid
 }
 
-func (t *Trie) CollectAllWords(node *TrieNode, word string, words []string) {
+func (t *Trie) CollectAllWords(node *TrieNode, word string) {
 	currKid := node
 	if currKid == nil {
 		currKid = t.Root
@@ -65,10 +64,9 @@ func (t *Trie) CollectAllWords(node *TrieNode, word string, words []string) {
 
 	for key, kidNode := range currKid.Kids {
 		if key == "*" {
-			words = append(words, word)
-			fmt.Println(words)
+			t.Words = append(t.Words, word)
 		} else {
-			t.CollectAllWords(kidNode, word+key, words)
+			t.CollectAllWords(kidNode, word+key)
 		}
 	}
 }

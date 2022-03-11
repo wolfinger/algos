@@ -144,10 +144,9 @@ func main() {
 
 	fmt.Println(t.Root.Kids["c"].Kids["a"].Kids)
 
-	var words []string
-	t.CollectAllWords(nil, "", words)
+	t.CollectAllWords(nil, "")
 
-	for word := range words {
+	for _, word := range t.Words {
 		fmt.Println(word)
 	}
 }
