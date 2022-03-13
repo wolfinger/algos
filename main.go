@@ -149,4 +149,65 @@ func main() {
 	for _, word := range t.Words {
 		fmt.Println(word)
 	}
+
+	fmt.Println("===")
+
+	// create graph, vertices, and relationships
+	g := ds.NewGraph()
+
+	vAlice := ds.NewVertex("alice")
+
+	vBob := ds.NewVertex("bob")
+	vCandy := ds.NewVertex("candy")
+	vDerek := ds.NewVertex("derek")
+	vElaine := ds.NewVertex("elaine")
+
+	vFred := ds.NewVertex("fred")
+	vGina := ds.NewVertex("gina")
+
+	vHelen := ds.NewVertex("helen")
+	vIrena := ds.NewVertex("irena")
+
+	g.AddVertex(vAlice)
+
+	g.AddVertex(vBob)
+	g.AddVertex(vCandy)
+	g.AddVertex(vDerek)
+	g.AddVertex(vElaine)
+
+	g.AddVertex(vFred)
+	g.AddVertex(vGina)
+
+	g.AddVertex(vHelen)
+	g.AddVertex(vIrena)
+
+	vAlice.AddAdjacentVertex(vBob)
+	vAlice.AddAdjacentVertex(vCandy)
+	vAlice.AddAdjacentVertex(vDerek)
+	vAlice.AddAdjacentVertex(vElaine)
+
+	vBob.AddAdjacentVertex(vCandy)
+	vBob.AddAdjacentVertex(vFred)
+
+	vCandy.AddAdjacentVertex(vAlice)
+	vCandy.AddAdjacentVertex(vHelen)
+
+	vDerek.AddAdjacentVertex(vAlice)
+	vDerek.AddAdjacentVertex(vElaine)
+	vDerek.AddAdjacentVertex(vGina)
+
+	vElaine.AddAdjacentVertex(vAlice)
+	vElaine.AddAdjacentVertex(vDerek)
+
+	vFred.AddAdjacentVertex(vBob)
+	vFred.AddAdjacentVertex(vHelen)
+
+	vGina.AddAdjacentVertex(vDerek)
+	vGina.AddAdjacentVertex(vIrena)
+
+	vHelen.AddAdjacentVertex(vFred)
+	vHelen.AddAdjacentVertex(vCandy)
+
+	vIrena.AddAdjacentVertex(vGina)
+
 }
