@@ -152,7 +152,7 @@ func main() {
 
 	fmt.Println("===")
 
-	// create graph, vertices, and relationships
+	// create graph, vertices, and edges
 	g := ds.NewGraph()
 
 	vAlice := ds.NewVertex("alice")
@@ -209,5 +209,13 @@ func main() {
 	vHelen.AddAdjacentVertex(vCandy)
 
 	vIrena.AddAdjacentVertex(vGina)
+
+	visited := make(map[string]bool)
+
+	fmt.Println("=== dfs ===")
+	g.DFSTraverse(vAlice, visited)
+
+	fmt.Println("=== bfs ===")
+	g.BFSTraverese(vAlice)
 
 }
